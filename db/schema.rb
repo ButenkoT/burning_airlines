@@ -11,10 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107021342) do
+ActiveRecord::Schema.define(version: 20141107032200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "add_plane_name_to_flights", force: true do |t|
+  end
 
   create_table "airplanes", force: true do |t|
     t.string   "name"
@@ -29,6 +32,17 @@ ActiveRecord::Schema.define(version: 20141107021342) do
     t.string   "origin"
     t.string   "destination"
     t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "plane_name"
+  end
+
+  create_table "flights_users", force: true do |t|
+  end
+
+  create_table "reservations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "flight_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

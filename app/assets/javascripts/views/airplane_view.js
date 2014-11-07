@@ -1,5 +1,6 @@
 var app = app || {};
-appViews = appViews || {};
+app.Views = app.Views || {};
+
 
 app.AppView = Backbone.View.extend({
     events: {
@@ -15,9 +16,17 @@ app.AppView = Backbone.View.extend({
     },
 
     addAirplane: function(event) {
-        if (event.type == 'submit') {
-            event.preventDefault();
-        }
-        var addPlane = new app.Airplane({name: $('#airplane-name').val(), rows('#airplane-rows').val(), columns('#airplane-columns').val()})
+
+        var addAirplane = new app.Airplane({name: $('#airplane-name').val(), rows$('#airplane-rows').val(), columns$('#airplane-columns').val()})
     }
+
+    //initialize: function() {},
+    //render: function() {
+    //    var template = $('#airplane_view').html();
+    //    this.$el.html( template );
+    //
+    //    this.collection.each(function (airplane) {
+    //        var view = new app.Views
+    //    });
+    //}
 })

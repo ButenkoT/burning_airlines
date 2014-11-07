@@ -27,3 +27,15 @@
 <br>
 
 <%= link_to 'New Airplane', new_airplane_path %>
+
+<div id="airplane-name"><div>
+<div id="airplane-rows"></div>
+<div id="airplane-columns"></div>
+
+  <script type="template/handlebars" id="airplaneView">
+    <div class="post">
+      <h2>{{ name }}</h2>
+      <h4>{{ row }}</h4>
+      <p> {{ columns }}</p>
+    </div>
+  </script>

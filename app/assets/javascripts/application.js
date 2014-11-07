@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require handlebars
-//= require backbone
+//= require lib/underscore
+//= require lib/handlebars
+//= require lib/backbone
 //= require_tree ./models
 //= require_tree .

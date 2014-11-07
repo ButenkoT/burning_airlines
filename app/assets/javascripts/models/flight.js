@@ -1,5 +1,5 @@
 var app = app || {};
-app.Models = {};
+app.Models = app.Models || {};
 
 app.Models.Flight = Backbone.Model.extend({
   defaults:{

@@ -29,3 +29,33 @@
 <br>
 
 <%= link_to 'New Flight', new_flight_path %>
+
+
+<div class="container">
+  <h1><a href="#">Flights List</a></h1>
+  <div id="main"></div>
+</div>
+
+<script type="template/html" id="appView">
+
+  <h1>Available Flights</h1>
+  <ul id="flights"></ul>
+
+</script>
+
+<script type="template/handlebars" id="flightsListView">
+  {{title}}
+</script>
+
+<script type="template/handlebars" id="flightView">
+
+  <div class="flight">
+
+    <p> {{ name }}</p>
+    <p> {{ origin }}</p>
+    <p> {{ destination }} </p>
+    <p> {{ date }} </p>
+
+  </div>
+
+</script>

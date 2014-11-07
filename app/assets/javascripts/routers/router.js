@@ -7,6 +7,7 @@ app.Router = Backbone.Router.extend({
     '/flights': 'getAllFlights',
     '/flights/:id': 'showFlight',
     '/search': 'getSearch',
+    '/users': 'showUser',
     '/*anythingElse': 'pageNotFound'
   },
 
@@ -14,6 +15,7 @@ app.Router = Backbone.Router.extend({
   getAllFlights: function(){},
   showFlight: function(){},
   getSearch: function(){},
+  showUser: function(){},
 
   pageNotFound: function(){
 

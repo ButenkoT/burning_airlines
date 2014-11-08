@@ -10,18 +10,13 @@ var app = app || {};
 //    new app.Models.Flight({id: 4, name:'68AD89', origin: 'Brisban', destination: 'Sydney', date: '2014.12.15'})
 //  ]);
 //
-//  app.router = new app.Router();
-//  Backbone.history.start();
-//
 //});
 
 
 $(function () {
   if ($('#main').length === 0) {
     return;
-  };
-
-
+  }
 
   app.flights = new app.Collections.Flights();
 

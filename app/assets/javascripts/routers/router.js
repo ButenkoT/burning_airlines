@@ -16,8 +16,11 @@ app.Router = Backbone.Router.extend({
 
   getAllFlights: function(){
     console.log('we are on the all flights page');
-    /*var appView = */new app.Views.AppView({collection: app.flights});
-    //appView.render();
+
+    app.flights.fetch().done(function(){
+      var appView = new app.Views.AppView({collection: app.flights});
+      appView.render();
+    });
   },
 
   showFlight: function(id){

@@ -21,7 +21,7 @@ app.Views.AppView = Backbone.View.extend({
   },
 
   newFlight: function (event) {
-    console.log('new flight')
+    console.log('new flight');
     event.preventDefault();
     app.router.navigate('flights/new', {trigger: true});
   }

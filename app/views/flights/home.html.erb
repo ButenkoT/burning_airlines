@@ -16,12 +16,15 @@
 
 <script type="template/handlebars" id="flightView">
   <div class="flight">
-    <p>{{ number }}</p>
-    <p>{{ origin }}</p>
-    <p>{{ destination }}</p>
-    <p>{{ date }}</p>
-    <p>{{ plane_name }}</p>
+    <p>Flight number: {{ number }}</p>
+    <p>Origin: {{ origin }}</p>
+    <p>Destination: {{ destination }}</p>
+    <p>Date: {{ date }}</p>
+    <p>Plane name: {{ plane_name }}</p>
   </div>
+
+  <a href="#" id="editFlight">Update</a>
+  <a href="#" id="deleteFlight">Delete</a>
 </script>
 
 <script type="template/html" id="flightNewView">

@@ -37,9 +37,6 @@ ActiveRecord::Schema.define(version: 20141107032200) do
     t.string   "plane_name"
   end
 
-  create_table "flights_users", force: true do |t|
-  end
-
   create_table "reservations", force: true do |t|
     t.integer  "user_id"
     t.integer  "flight_id"

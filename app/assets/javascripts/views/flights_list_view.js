@@ -2,18 +2,20 @@ var app = app || {};
 app.Views = app.Views || {};
 
 app.Views.AppView = Backbone.View.extend({
-  el: '#main',
+  tag: 'div',
+  id: 'flightList',
   events: {
     'click #newFlight': 'newFlight'
   },
+
   initialize: function(){
+    $('#main').html(this.$el);
     this.render();
   },
 
   render: function(){
     var template = $('#appView').html();
     this.$el.html(template);
-
     this.collection.each(function(flight){
       var view = new app.Views.FlightsListViews({model: flight});
       view.render();
@@ -39,6 +41,7 @@ app.Views.FlightsListViews = Backbone.View.extend({
     var flightsListHTML = Handlebars.compile(template);
 
     this.$el.html(flightsListHTML(this.model.toJSON()));
+
     $('#flights').append(this.el); //or prepend for reverse chronological order
 
   },

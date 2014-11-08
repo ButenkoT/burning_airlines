@@ -2,12 +2,17 @@ var app = app || {};
 app.Views = app.Views || {};
 
 app.Views.FlightView = Backbone.View.extend({
-  el: '#main',
+  tag: 'div',
+  id: 'flightDetails',
   events: {
     'click #editFlight': 'editFlight',
     'click #deleteFlight': 'deleteFlight'
   },
-  initialize: function(){},
+  initialize: function(){
+    //this.listenTo(this.model, 'destroy', this.destroy);
+    $('#main').html(this.$el);
+    this.render();
+  },
   render: function(){
     var template = $('#flightView').html();
     var flightHTML = Handlebars.compile(template);
@@ -20,7 +25,10 @@ app.Views.FlightView = Backbone.View.extend({
   deleteFlight: function(event){
 
     event.preventDefault();
-    this.model.destroy();
+
+    this.model.destroy({success: function() {
+      alert('Successfully destroyed flight');
+    }});
     app.router.navigate('flights/', {trigger: true});
   }
 });

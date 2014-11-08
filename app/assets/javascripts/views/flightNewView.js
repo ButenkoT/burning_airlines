@@ -2,15 +2,22 @@ var app = app || {};
 app.Views = app.Views || {};
 
 app.Views.FlightNew = Backbone.View.extend({
-  el: '#main',
+  tag: 'div',
+  id: 'newFlightForm',
   events: {
     'submit form': 'createFlight'
   },
-  initialize: function () {},
+
+  initialize: function () {
+    $('#main').html(this.$el);
+    this.render();
+  },
+
   render: function () {
     var template = $('#flightNewView').html();
     this.$el.html(template);
   },
+
   createFlight: function (event) {
     event.preventDefault();
 

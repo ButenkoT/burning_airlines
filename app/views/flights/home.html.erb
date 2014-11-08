@@ -5,47 +5,61 @@
 <div id="main"></div>
 
 <script type="template/html" id="appView">
+
   <h2>Available flights</h2>
   <ul id="flights"></ul>
   <a href="#" id="newFlight">New flight</a>
+
 </script>
 
 <script type="template/handlebars" id="flightsListView">
   {{ number }}
 </script>
 
+
 <script type="template/handlebars" id="flightView">
+
   <div class="flight">
     <p>Flight number: {{ number }}</p>
+
     <p>Origin: {{ origin }}</p>
+
     <p>Destination: {{ destination }}</p>
+
     <p>Date: {{ date }}</p>
+
     <p>Plane name: {{ plane_name }}</p>
   </div>
 
   <a href="#" id="editFlight">Update</a>
   <a href="#" id="deleteFlight">Delete</a>
+
 </script>
 
 <script type="template/html" id="flightNewView">
+
   <h2>New Flight</h2>
   <%= form_for Flight.new do |f| %>
   <p>
     <%= f.label :number %><br>
     <%= f.text_field :number, :required => true %>
   </p>
+
   <p>
     <%= f.label :origin %><br>
     <%= f.text_field :origin, :required => true %>
   </p>
+
   <p>
     <%= f.label :destination %><br>
     <%= f.text_field :destination, :required => true %>
   </p>
+
   <p>
     <%= f.label :date %><br>
     <%= f.date_field :date, :required => true %>
   </p>
+
   <p>
     <%= f.label :plane_name %><br>
     <%= f.text_field :plane_name, :required => true %>

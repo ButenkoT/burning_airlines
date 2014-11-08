@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :reservations
 
-  root :to => 'flights#index'
+  root :to => 'flights#home'
 
   resources :flights
 

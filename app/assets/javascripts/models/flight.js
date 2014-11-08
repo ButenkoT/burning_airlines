@@ -2,6 +2,7 @@ var app = app || {};
 app.Models = app.Models || {};
 
 app.Models.Flight = Backbone.Model.extend({
+  urlRoot: '/flights',
   defaults:{
     number: '11AA1A',
     origin: 'No origin assigned',

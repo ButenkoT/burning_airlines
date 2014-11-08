@@ -15,6 +15,6 @@
 //= require lib/underscore
 //= require lib/handlebars
 //= require lib/backbone
+//= require_tree ./1models
+//= require_tree ./views
 //= require_tree .
-//= require_tree ./models
-

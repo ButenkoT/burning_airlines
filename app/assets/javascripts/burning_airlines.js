@@ -9,6 +9,7 @@ $(document).ready (function() {
     Backbone.history.start();
 
     app.model = new app.Models.Airplane;
+    console.log('app.model',app.model);
 
     app.collection = new app.Airplanes;
     app.collection.fetch();

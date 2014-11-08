@@ -1,10 +1,10 @@
 <script type="text/x-handlebars-template" id="airplaneView">
     <div class="airplane">
-    <p>airplanes</p>
+    <h1>Airplanes</h1>
     {{#each planes}}
-      <h2>{{ this.name }}</h2>
-      <h4>{{ this.row }}</h4>
-      <p> {{ this.columns }}</p>
+      <h2 class='plane_name'>{{ name }}</h2>
+      <p>{{ row }}</p>
+      <p> {{ columns }}</p>
       {{/each}}
     </div>
 </script>

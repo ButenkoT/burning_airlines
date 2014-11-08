@@ -1,6 +1,7 @@
 var app = app || {};
+app.Models = app.Models || {};
 
-var Airplane = Backbone.Model.extend({
-    url: '/airplanes',
+app.Models.Airplane = Backbone.Model.extend({
+    urlRoot: '/planes',
     initialize: function() {}
 })

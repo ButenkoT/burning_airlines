@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root :to => 'flights#index'
 
+  get '/planes' => 'airplanes#planes'
+
   resources :flights
 
   resources :airplanes

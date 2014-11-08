@@ -2,7 +2,7 @@
  app.Models = app.Models || {};
 
  app.Airplanes = Backbone.Collection.extend({
-    url: '/airplanes',
+    url: '/planes',
      models: app.Models.Airplane,
      initialize: function (){},
 

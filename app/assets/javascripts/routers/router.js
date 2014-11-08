@@ -2,15 +2,17 @@ var app = app || {};
 
 app.Router = Backbone.Router.extend({
   routes:{
-    '': 'getAirplanes',
-    '/airplanes': 'getAirplanes',
-    '/flights': 'getAllFlights',
-    '/flights/:id': 'showFlight',
-    '/search': 'getSearch',
-    '/*anythingElse': 'pageNotFound'
+    'planes': 'getAirplanes',
+    'airplanes': 'getAirplanes',
+    'flights': 'getAllFlights',
+    'flights/:id': 'showFlight',
+    'search': 'getSearch',
+    '*anythingElse': 'pageNotFound'
   },
-
-  getAirplanes: function(){},
+  getAirplanes: function(){
+    var appView = new app.Views.AppView;
+    appView.render();
+  },
   getAllFlights: function(){},
   showFlight: function(){},
   getSearch: function(){},

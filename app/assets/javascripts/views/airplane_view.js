@@ -2,23 +2,35 @@ var app = app || {};
 app.Views = app.Views || {};
 
 
-app.AppView = Backbone.View.extend({
+app.Views.AppView = Backbone.View.extend({
     events: {
-        'click': 'addAirplane',
-        'submit': 'addAirplane'
+        'click submit': 'addAirplane'
     },
 
-    initialize: function() {},
-    render: function() {
+    el: '#main',
+
+    initialize: function () {
+    },
+    render: function () {
+        debugger;
         console.log('creating new plane')
-        this.$el.html (app.templates.airplaneView);
-        return this.el
+        app.model.fetch().done(function(){
+            var template = Handlebars.compile(app.templates.airplaneView);
+            var json = app.model.toJSON();
+            this.$el.html(template(json));
+            return this.el;
+        })
     },
 
-    addAirplane: function(event) {
+    addAirplane: function (event) {
 
-        var addAirplane = new app.Airplane({name: $('#airplane-name').val(), rows$('#airplane-rows').val(), columns$('#airplane-columns').val()})
+        var addAirplane = new app.Airplane({
+            name: $('#airplane-name').val(),
+            rows: $('#airplane-rows').val(),
+            columns: $('#airplane-columns').val()
+        })
     }
+
 
     //initialize: function() {},
     //render: function() {

@@ -7,6 +7,15 @@ class AirplanesController < ApplicationController
     @airplanes = Airplane.all
   end
 
+
+  def planes
+    @planes = Airplane.all
+    respond_to do |format|
+      format.html { render :planes}
+      format.json { render json: @planes}
+    end
+  end
+
   # GET /airplanes/1
   # GET /airplanes/1.json
   def show

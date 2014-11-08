@@ -12,14 +12,28 @@ app.Router = Backbone.Router.extend({
   },
 
   getAirplanes: function(){},
-  getAllFlights: function(){},
-  showFlight: function(){},
+
+  getAllFlights: function(){
+    var appView = new app.Views.AppView({collection: app.flights});
+    appView.render();
+  },
+
+  showFlight: function(id){
+    var flight = app.flights.get(id);
+    if(!flight){
+      app.router.navigate('', true);
+    } else {
+      var view = new app.Views.FlightView({model: flight});
+      view.render();
+    }
+  },
+
   getSearch: function(){},
   showUser: function(){},
 
   pageNotFound: function(){
 
-    //app.router.navigate('', true);
+    app.router.navigate('', true);
 
   }
 

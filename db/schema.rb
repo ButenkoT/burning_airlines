@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20141107032200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "add_plane_name_to_flights", force: true do |t|
-  end
-
   create_table "airplanes", force: true do |t|
     t.string   "name"
     t.integer  "rows"

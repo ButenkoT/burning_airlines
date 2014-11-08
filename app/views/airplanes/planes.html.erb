@@ -9,4 +9,15 @@
     </div>
 </script>
 
+<script type="text/x-handlebars-template" id="airplaneShow">
+    <div class="airplane">
+    <h1>Airplane Name</h1>
+    {{#each planes}}
+      <h2 class='plane_name'>{{ name }}</h2>
+      <p>{{ row }}</p>
+      <p> {{ columns }}</p>
+      {{/each}}
+    </div>
+</script>
+
 <div id='main'></div>

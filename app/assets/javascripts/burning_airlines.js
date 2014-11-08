@@ -10,6 +10,7 @@ $(document).ready (function() {
 
     app.model = new app.Models.Airplane;
     console.log('app.model',app.model);
+    app.model.fetch();
 
     app.collection = new app.Airplanes;
     app.collection.fetch();

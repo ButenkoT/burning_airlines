@@ -18,6 +18,15 @@ app.Router = Backbone.Router.extend({
       appView.render();
     });
   },
+
+  getAirplane: function() {
+    var planeModel = new app.Airplane();
+    planeModel.fetch().done(function() {
+      var appView  = new app.Views.AppView({model: planeModel});
+      appView.render();  
+    });
+  },
+
   getAllFlights: function(){},
   showFlight: function(){},
   getSearch: function(){},

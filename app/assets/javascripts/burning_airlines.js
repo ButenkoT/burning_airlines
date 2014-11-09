@@ -1,6 +1,7 @@
 var app = app || {};
 
 $(document).ready (function() {
+    // new app.AppView();
     console.log('document ready')
     app.templates = {
         airplaneView: $('#airplaneView').html()

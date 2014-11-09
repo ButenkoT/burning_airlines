@@ -14,9 +14,11 @@ app.Views.AppView = Backbone.View.extend({
     },
     render: function () {
         var template = $('#airplaneView').html();
+        var template = $('#airplaneShow').html();
         var displayHTML = Handlebars.compile(template);
 
         this.$el.html(displayHTML({planes: this.collection.toJSON()}));
+        // this.$el.html(displayHTML({plane: this.model.toJSON()}));
     },
 
     addAirplane: function (event) {
@@ -27,20 +29,24 @@ app.Views.AppView = Backbone.View.extend({
             columns: $('#airplane-columns').val()
         })
     },
+
     showAirplane: function () {
         console.log('show airplane')
         $('#airplaneView').empty('');
-        var template = $('#airplaneShow').html();
-        var displayHTML = Handlebars.compile(template);
+        var showAirplane = app.Airplane({
+            name: $('#airplane-name').val(),
+            // rows: $('#airplane-rows').val(),
+            // columns: $('#airplane-columns').val()
+        })
 
-        this.$el.html(displayHTML({plane: this.model.toJSON()}));
+        // var template = $('#airplaneShow').html();
+        // var displayHTML = Handlebars.compile(template);
 
-
+        $('#airplaneShow').append(this.el)
+    },
+    
 // empty el;
 // declare template for single plane view
 // compile template
-//
 
-
-    },
 })

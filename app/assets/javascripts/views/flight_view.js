@@ -27,7 +27,7 @@ app.Views.FlightView = Backbone.View.extend({
     event.preventDefault();
 
     this.model.destroy({success: function() {
-      alert('Successfully destroyed flight');
+      console.log('Successfully destroyed flight');
     }});
     app.router.navigate('flights/', {trigger: true});
   }

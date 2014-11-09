@@ -10,6 +10,8 @@ app.Views.FlightView = Backbone.View.extend({
   },
   initialize: function(){
     //this.listenTo(this.model, 'destroy', this.destroy);
+    //_.bindAll(this, "editFlight");
+    //this.on('change', this.editFlight);
     $('#main').html(this.$el);
     this.render();
   },
@@ -20,7 +22,10 @@ app.Views.FlightView = Backbone.View.extend({
     this.$el.html(flightHTML(this.model.toJSON()));
   },
 
-  editFlight: function(){},
+  editFlight: function(event){
+    event.preventDefault();
+
+  },
 
   deleteFlight: function(event){
 

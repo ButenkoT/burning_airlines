@@ -1,8 +1,8 @@
 <a href="#">Home</a>
-    <a href="#airplanes">Planes</a>
-    <a href="#flights">Flights</a>
-    <a href="#search">Search</a>
-    <a href="#user">User page</a>
+<a href="#airplanes">Planes</a>
+<a href="#flights">Flights</a>
+<a href="#search">Search</a>
+<a href="#user">User page</a>
 
 <h1>Flights List</h1>
 
@@ -68,6 +68,60 @@
     <%= f.label :plane_name %><br>
     <%= f.text_field :plane_name, :required => true %>
   </p>
+  <%= f.submit %>
+  <% end %>
+</script>
+
+
+
+<script type="template/html" id="appPlaneView">
+
+  <h2>Planes</h2>
+  <ul id="planes"></ul>
+  <a href="#airplanes/new" id="newPlane">New Plane</a>
+
+</script>
+
+<script type="template/handlebars" id="planesListView">
+  {{ name }}
+</script>
+
+
+<script type="template/handlebars" id="planeView">
+
+  <div class="plane">
+    <p>Plane name: {{ name }}</p>
+
+    <p>Rows: {{ rows }}</p>
+
+    <p>Columns: {{ columns }}</p>
+
+  </div>
+
+  <a href="#" id="editPlane">Update</a>
+  <a href="#" id="deletePlane">Delete</a>
+
+</script>
+
+<script type="template/html" id="planeNewView">
+
+  <h2>New Plane</h2>
+  <%= form_for Plane.new do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :rows %><br>
+    <%= f.text_field :rows, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :columns %><br>
+    <%= f.text_field :columns, :required => true %>
+  </p>
+
   <%= f.submit %>
   <% end %>
 </script>

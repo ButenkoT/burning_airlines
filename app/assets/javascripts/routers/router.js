@@ -4,6 +4,8 @@ app.Router = Backbone.Router.extend({
   routes:{
     '': 'getAllFlights',
     'airplanes': 'getAirplanes',
+    'airplanes/new': 'newPlane',
+    'airplanes/:id': 'showPlane',
     'flights': 'getAllFlights',
     'flights/new': 'newFlight',
     'flights/:id': 'showFlight',
@@ -12,7 +14,28 @@ app.Router = Backbone.Router.extend({
     '*anythingElse': 'pageNotFound'
   },
 
-  getAirplanes: function(){},
+  getAirplanes: function(){
+    app.planes.fetch().done(function(){
+      var appPlaneView = new app.Views.AppPlaneView({collection: app.planes});
+      appPlaneView.render();
+    });
+  },
+
+  showPlane: function(id){
+    console.log('we are on the show plane page');
+    var plane = app.planes.get(id);
+    if(!plane){
+      app.router.navigate('', true);
+    } else {
+      var view = new app.Views.PlaneView({model: plane});
+      view.render();
+    }
+  },
+
+  newPlane: function () {
+    var newPlane = new app.Views.PlaneNew();
+    newPlane.render();
+  },
 
   getAllFlights: function(){
     console.log('we are on the all flights page');
